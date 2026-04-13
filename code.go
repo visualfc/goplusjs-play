@@ -19,7 +19,9 @@ import (
 
 	"github.com/goplus/ixgo/fsys/txtar"
 	_ "github.com/goplus/reflectx/icall/icall1024"
-	gopformat "github.com/goplus/xgo/format"
+
+	//gopformat "github.com/goplus/xgo/format"
+	xformat "github.com/goplus/xgo/x/format"
 )
 
 func clearCanvas() {
@@ -182,14 +184,17 @@ func formatCode(src []byte, enableGoplus bool) ([]byte, error) {
 		case ".go":
 			data, err = format.Source(ar.M[file])
 		case ".gop", ".xgo":
-			data, err = gopformat.Source(ar.M[file], false, file)
+			data, err = xformat.XGoStyleSource(ar.M[file], false, file)
+			//gopformat.Source(ar.M[file], false, file)
 		case ".gox":
-			data, err = gopformat.Source(ar.M[file], true, file)
+			data, err = xformat.XGoStyleSource(ar.M[file], true, file)
+			//data, err = gopformat.Source(ar.M[file], true, file)
 		default:
 			if _, ok := xgobuild.ClassKind(file); !ok {
 				continue
 			}
-			data, err = gopformat.Source(ar.M[file], true, file)
+			data, err = xformat.XGoStyleSource(ar.M[file], true, file)
+			//data, err = gopformat.Source(ar.M[file], true, file)
 		}
 		if err != nil {
 			return nil, err
