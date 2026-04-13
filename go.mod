@@ -4,13 +4,13 @@ go 1.24.0
 
 require (
 	github.com/google/uuid v1.6.0
-	github.com/goplus/gogen v1.21.2
-	github.com/goplus/ixgo v1.0.1
+	github.com/goplus/gogen v1.23.0-pre.2
+	github.com/goplus/ixgo v1.0.6-0.20260410072914-b606fc8cfddd
 	github.com/goplus/mcp v0.9.6
-	github.com/goplus/reflectx v1.6.0
-	github.com/goplus/xgo v1.6.6
+	github.com/goplus/reflectx v1.6.4
+	github.com/goplus/xgo v1.7.1-0.20260413043704-93ff1eed8445
 	github.com/mark3labs/mcp-go v0.43.2
-	github.com/qiniu/x v1.16.3
+	github.com/qiniu/x v1.17.0
 	github.com/yosida95/uritemplate/v3 v3.0.2
 )
 
@@ -18,7 +18,7 @@ require (
 	github.com/bahlo/generic-list-go v0.2.0 // indirect
 	github.com/buger/jsonparser v1.1.1 // indirect
 	github.com/goccy/go-yaml v1.19.2 // indirect
-	github.com/goplus/mod v0.19.4-0.20260222111422-56104f99b604 // indirect
+	github.com/goplus/mod v0.20.2 // indirect
 	github.com/invopop/jsonschema v0.13.0 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/spf13/cast v1.7.1 // indirect
