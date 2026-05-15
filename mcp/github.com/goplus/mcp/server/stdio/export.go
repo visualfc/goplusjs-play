@@ -7,15 +7,17 @@ import (
 )
 
 func init() {
-	ixgo.RegisterPackage(&ixgo.Package{
-		Name: "stdio",
-		Path: "github.com/goplus/mcp/server/stdio",
-		Deps: map[string]string{
-			"github.com/goplus/mcp/server/svx":   "svx",
-			"github.com/mark3labs/mcp-go/server": "server",
-			"log":                                "log",
-		},
-		Source: source,
+	ixgo.RegisterPackageLazy("github.com/goplus/mcp/server/stdio", func() *ixgo.Package {
+		return &ixgo.Package{
+			Name: "stdio",
+			Path: "github.com/goplus/mcp/server/stdio",
+			Deps: map[string]string{
+				"github.com/goplus/mcp/server/svx":   "svx",
+				"github.com/mark3labs/mcp-go/server": "server",
+				"log":                                "log",
+			},
+			Source: source,
+		}
 	})
 }
 

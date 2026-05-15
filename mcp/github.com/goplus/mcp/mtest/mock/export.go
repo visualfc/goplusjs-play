@@ -7,19 +7,21 @@ import (
 )
 
 func init() {
-	ixgo.RegisterPackage(&ixgo.Package{
-		Name: "mock",
-		Path: "github.com/goplus/mcp/mtest/mock",
-		Deps: map[string]string{
-			"context":                            "context",
-			"encoding/json":                      "json",
-			"fmt":                                "fmt",
-			"github.com/goplus/mcp/mtest/rtx":    "rtx",
-			"github.com/mark3labs/mcp-go/mcp":    "mcp",
-			"github.com/mark3labs/mcp-go/server": "server",
-			"sync/atomic":                        "atomic",
-		},
-		Source: source,
+	ixgo.RegisterPackageLazy("github.com/goplus/mcp/mtest/mock", func() *ixgo.Package {
+		return &ixgo.Package{
+			Name: "mock",
+			Path: "github.com/goplus/mcp/mtest/mock",
+			Deps: map[string]string{
+				"context":                            "context",
+				"encoding/json":                      "json",
+				"fmt":                                "fmt",
+				"github.com/goplus/mcp/mtest/rtx":    "rtx",
+				"github.com/mark3labs/mcp-go/mcp":    "mcp",
+				"github.com/mark3labs/mcp-go/server": "server",
+				"sync/atomic":                        "atomic",
+			},
+			Source: source,
+		}
 	})
 }
 

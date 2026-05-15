@@ -7,9 +7,7 @@ import (
 )
 
 func main() {
-	// os.Setenv("GODEBUG", "GOEXPERIMENT=aliastypeparams")
-	// os.Setenv("GODEBUG", "gotypesalias=0")
-	ctx := NewContext(ixgo.SupportMultipleInterp)
+	ctx := NewContext(ixgo.SupportMultipleInterp | ixgo.OptionLoadRutimeImethod)
 	jsFunc := js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 		switch args[0].String() {
 		case "/compile":

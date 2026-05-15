@@ -7,24 +7,26 @@ import (
 )
 
 func init() {
-	ixgo.RegisterPackage(&ixgo.Package{
-		Name: "server",
-		Path: "github.com/goplus/mcp/server",
-		Deps: map[string]string{
-			"context":                            "context",
-			"encoding/json":                      "json",
-			"errors":                             "errors",
-			"github.com/goplus/mcp/server/stdio": "stdio",
-			"github.com/goplus/mcp/server/svx":   "svx",
-			"github.com/mark3labs/mcp-go/mcp":    "mcp",
-			"github.com/mark3labs/mcp-go/server": "server",
-			"github.com/yosida95/uritemplate/v3": "uritemplate",
-			"log":                                "log",
-			"reflect":                            "reflect",
-			"strconv":                            "strconv",
-			"strings":                            "strings",
-		},
-		Source: source,
+	ixgo.RegisterPackageLazy("github.com/goplus/mcp/server", func() *ixgo.Package {
+		return &ixgo.Package{
+			Name: "server",
+			Path: "github.com/goplus/mcp/server",
+			Deps: map[string]string{
+				"context":                            "context",
+				"encoding/json":                      "json",
+				"errors":                             "errors",
+				"github.com/goplus/mcp/server/stdio": "stdio",
+				"github.com/goplus/mcp/server/svx":   "svx",
+				"github.com/mark3labs/mcp-go/mcp":    "mcp",
+				"github.com/mark3labs/mcp-go/server": "server",
+				"github.com/yosida95/uritemplate/v3": "uritemplate",
+				"log":                                "log",
+				"reflect":                            "reflect",
+				"strconv":                            "strconv",
+				"strings":                            "strings",
+			},
+			Source: source,
+		}
 	})
 }
 

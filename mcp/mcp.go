@@ -1,11 +1,11 @@
 package mcp
 
-//go:generate qexp -outdir . -code github.com/goplus/mcp/...
-//go:generate qexp -outdir . -code github.com/qiniu/x/test
-//go:generate qexp -outdir . github.com/mark3labs/mcp-go/...
-//go:generate qexp -outdir . github.com/qiniu/x/stringutil
-//go:generate qexp -outdir . github.com/yosida95/uritemplate/v3
-//go:generate qexp -outdir . github.com/google/uuid
+//go:generate qexp -outdir . -lazy -code github.com/goplus/mcp/...
+//go:generate qexp -outdir . -lazy -code github.com/qiniu/x/test
+//go:generate qexp -outdir . -lazy github.com/mark3labs/mcp-go/...
+//go:generate qexp -outdir . -lazy github.com/qiniu/x/stringutil
+//go:generate qexp -outdir . -lazy github.com/yosida95/uritemplate/v3
+//go:generate qexp -outdir . -lazy github.com/google/uuid
 
 import (
 	_ "github.com/goplus/mcp/server"
