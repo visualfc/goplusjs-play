@@ -7,25 +7,27 @@ import (
 )
 
 func init() {
-	ixgo.RegisterPackage(&ixgo.Package{
-		Name: "mtest",
-		Path: "github.com/goplus/mcp/mtest",
-		Deps: map[string]string{
-			"context":                          "context",
-			"encoding/json":                    "json",
-			"fmt":                              "fmt",
-			"github.com/goplus/mcp/mtest/mock": "mock",
-			"github.com/goplus/mcp/mtest/rtx":  "rtx",
-			"github.com/mark3labs/mcp-go/client/transport": "transport",
-			"github.com/mark3labs/mcp-go/mcp":              "mcp",
-			"github.com/mark3labs/mcp-go/server":           "server",
-			"github.com/qiniu/x/test":                      "test",
-			"log":                                          "log",
-			"maps":                                         "maps",
-			"os":                                           "os",
-			"testing":                                      "testing",
-		},
-		Source: source,
+	ixgo.RegisterPackageLazy("github.com/goplus/mcp/mtest", func() *ixgo.Package {
+		return &ixgo.Package{
+			Name: "mtest",
+			Path: "github.com/goplus/mcp/mtest",
+			Deps: map[string]string{
+				"context":                          "context",
+				"encoding/json":                    "json",
+				"fmt":                              "fmt",
+				"github.com/goplus/mcp/mtest/mock": "mock",
+				"github.com/goplus/mcp/mtest/rtx":  "rtx",
+				"github.com/mark3labs/mcp-go/client/transport": "transport",
+				"github.com/mark3labs/mcp-go/mcp":              "mcp",
+				"github.com/mark3labs/mcp-go/server":           "server",
+				"github.com/qiniu/x/test":                      "test",
+				"log":                                          "log",
+				"maps":                                         "maps",
+				"os":                                           "os",
+				"testing":                                      "testing",
+			},
+			Source: source,
+		}
 	})
 }
 
