@@ -151,7 +151,7 @@ func (c *Context) runCode(src string, enableGoplus bool) (code int, e error, ems
 		err = ctx.TestPkg(pkg, "main", []string{"-test.v"})
 		return
 	}
-	// interp, err := igop.NewInterp(ctx, pkg)
+	// interp, err := ixgo.NewInterp(ctx, pkg)
 	// if err != nil {
 	// 	return 2, err, ""
 	// }
